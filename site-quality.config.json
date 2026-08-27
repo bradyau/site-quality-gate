@@ -1,0 +1,37 @@
+{
+  "fixturePort": 4173,
+  "routes": [
+    "/",
+    "/contact/"
+  ],
+  "blockedAxeImpacts": [
+    "critical",
+    "serious"
+  ],
+  "axeTags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "viewports": [
+    {
+      "name": "phone",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    }
+  ],
+  "performanceBudgets": {
+    "largestContentfulPaintMs": 2500,
+    "cumulativeLayoutShift": 0.1,
+    "requests": 30,
+    "transferBytes": 500000,
+    "domNodes": 1200
+  }
+}

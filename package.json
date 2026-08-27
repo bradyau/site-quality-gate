@@ -1,0 +1,29 @@
+{
+  "name": "site-quality-gate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Repeatable accessibility, performance, responsive, and repository release checks for websites.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/check-syntax.mjs && node scripts/check-repository.mjs && node scripts/validate-config.mjs",
+    "serve": "node scripts/serve-fixture.mjs",
+    "test:browser": "playwright test",
+    "report": "node scripts/write-summary.mjs",
+    "gate": "node scripts/run-gate.mjs"
+  },
+  "keywords": [
+    "accessibility",
+    "axe-core",
+    "playwright",
+    "quality-gate",
+    "web-performance"
+  ],
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1"
+  }
+}

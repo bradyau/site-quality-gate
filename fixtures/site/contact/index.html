@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An accessible form fixture for the Site Quality Gate release checks.">
+    <title>Contact Pattern | Site Quality Gate Fixture</title>
+    <link rel="stylesheet" href="/assets/site.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="/">Quality Gate</a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Overview</a>
+        <a aria-current="page" href="/contact/">Contact</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-intro" aria-labelledby="contact-title">
+        <p class="eyebrow">Form pattern</p>
+        <h1 id="contact-title">A clear, labeled contact form.</h1>
+        <p class="intro">This non-submitting fixture checks field labels, descriptions, focus treatment, and responsive layout.</p>
+      </section>
+      <form class="contact-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-help" required>
+          <p id="email-help" class="field-help">Use the address where you want a reply.</p>
+        </div>
+        <div class="field">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <button type="submit">Review details</button>
+      </form>
+    </main>
+    <footer>
+      <p>Site Quality Gate fixture</p>
+    </footer>
+    <script src="/assets/site.js"></script>
+  </body>
+</html>

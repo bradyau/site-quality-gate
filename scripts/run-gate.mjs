@@ -68,7 +68,8 @@ if (!argumentUrl && !process.env.SITE_URL) {
 }
 
 const steps = [
-  { name: 'Repository and configuration', command: process.execPath, arguments: ['scripts/check-repository.mjs'] },
+  { name: 'JavaScript syntax', command: process.execPath, arguments: ['scripts/check-syntax.mjs'] },
+  { name: 'Repository hygiene', command: process.execPath, arguments: ['scripts/check-repository.mjs'] },
   { name: 'Configuration validation', command: process.execPath, arguments: ['scripts/validate-config.mjs'] },
   { name: 'Browser, accessibility, and performance', command: process.platform === 'win32' ? 'npx.cmd' : 'npx', arguments: ['playwright', 'test'] }
 ];

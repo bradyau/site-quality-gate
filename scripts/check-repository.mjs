@@ -19,7 +19,7 @@ function walk(directory) {
 
 function repositoryFiles() {
   if (existsSync(join(rootPath, '.git'))) {
-    return execFileSync('git', ['ls-files'], { cwd: rootPath, encoding: 'utf8' })
+    return execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], { cwd: rootPath, encoding: 'utf8' })
       .trim()
       .split('\n')
       .filter(Boolean);

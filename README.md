@@ -15,6 +15,7 @@ The project is intentionally small. It uses Playwright and axe-core, writes a pl
 | Link health | Same-origin links discovered on configured routes | Successful HTTP response |
 | Performance | LCP, CLS, request count, transferred bytes, and DOM size | Configurable route budgets |
 | Content baseline | Language, title, description, main landmark, and page heading | Required on every route |
+| Code quality | JavaScript syntax and configuration validation | All source and test files parse cleanly |
 | Repository hygiene | Development residue, credentials, local paths, and public-copy punctuation | No blocked patterns |
 
 Automated checks create a consistent release signal. They do not replace content review, assistive-technology testing, representative devices, business context, or accountable approval for what ships.

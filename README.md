@@ -87,7 +87,7 @@ See [RELEASE.md](RELEASE.md) for the complete preparation checklist.
 
 ## Project status
 
-Version 0.1.0 is the first review candidate. No tag or GitHub release has been published.
+Version 0.1.0 is the first release. See [CHANGELOG.md](CHANGELOG.md) for the verified scope.
 
 ## License
 

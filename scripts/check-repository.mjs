@@ -1,9 +1,9 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { extname, join, relative, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('../', import.meta.url);
-const rootPath = root.pathname;
+const rootPath = fileURLToPath(new URL('../', import.meta.url));
 const textExtensions = new Set(['.cjs', '.css', '.html', '.js', '.json', '.md', '.mjs', '.txt', '.yml', '.yaml']);
 const ignoredDirectories = new Set(['.git', '.lighthouseci', 'node_modules', 'reports']);
 
@@ -30,7 +30,6 @@ function repositoryFiles() {
 const files = repositoryFiles();
 const failures = [];
 const blockedBasenames = new Set(['.DS_Store', '.env']);
-const publicCopyRoots = ['README.md', 'CHANGELOG.md', 'CONTRIBUTING.md', 'SECURITY.md', 'RELEASE.md', '.github/', 'fixtures/', 'tests/'];
 const blockedToolNames = [
   ['chat', 'gpt'].join(''),
   ['co', 'dex'].join(''),
@@ -63,11 +62,9 @@ for (const file of files) {
     failures.push(`${file}: em dash character is not allowed in public documentation`);
   }
 
-  if (publicCopyRoots.some((path) => file === path || file.startsWith(path))) {
-    for (const pattern of patterns) {
-      if (pattern.expression.test(content)) {
-        failures.push(`${file}: ${pattern.label}`);
-      }
+  for (const pattern of patterns) {
+    if (pattern.expression.test(content)) {
+      failures.push(`${file}: ${pattern.label}`);
     }
   }
 }

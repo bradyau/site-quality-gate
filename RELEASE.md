@@ -13,7 +13,7 @@ Publishing a tag, GitHub release, package, or public repository is an explicit o
 
 ## Public-tree review
 
-- [ ] Repository visibility is still private during review.
+- [ ] Repository visibility matches the intended review or release stage.
 - [ ] No credentials, private URLs, local paths, transcripts, prompts, assistant or model names, automated attribution markers, or co-author tags are present.
 - [ ] Public documentation contains no em dash characters.
 - [ ] The license and project status are accurate.
